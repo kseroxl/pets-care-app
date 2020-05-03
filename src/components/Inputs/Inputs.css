@@ -1,0 +1,49 @@
+.input input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 3%;
+  font-size: 1em;
+
+  border-width: 0 0 1px 0;
+  border-color: var(--grey);
+
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input input:focus {
+  border-color: var(--green-bg);
+}
+
+::-webkit-input-placeholder {
+  color: var(--light-mode-dark-text);
+}
+
+.button {
+  border: none;
+  outline: none;
+  color: var(--light-mode-light-text);
+  margin-bottom: 2%;
+  transition: 0.3s background-color ease-in;
+
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+}
+.button:hover {
+  background-color: var(--green-bg-hover);
+}
+.button:active {
+  transform: scale(0.99);
+}
+
+@media only screen and (max-width: 650px) {
+  .input input {
+    font-size: 0.8em;
+  }
+  .button {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+}

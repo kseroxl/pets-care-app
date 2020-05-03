@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+body {
+  --dark-blue-bg: #264653;
+  --green-bg: #2a9d8f;
+  --green-bg-hover: #1d6d64;
+  --light-mode-light-bg: #fff;
+  --light-mode-light-text: #fff;
+  --light-mode-dark-text: #000000;
+
+  --grey: #c4c4c4;
+
+  --main-font: "Poppins", sans-serif;
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: var(--main-font);
+  font-size: 16px;
+}
+
+/* backgrounds */
+.dark-bg {
+  background-color: var(--dark-blue-bg);
+}
+
+.white-bg {
+  background-color: var(--light-mode-light-bg);
+}
+
+.green-bg {
+  background-color: var(--green-bg);
+}
+
+/* sizes */
+.full-screen {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+/* alignment */
+.flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* Elements */
+.error-message {
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-sizing: border-box;
+
+  margin-right: 2%;
+  font-weight: 400;
+  font-size: 0.8em;
+  border-radius: 5px;
+  padding: 10px;
+  width: 40%;
+
+  background-color: rgba(184, 0, 0, 0.6);
+  color: white;
+}
+
+.dashboard-page-header {
+  width: 100%;
+  background-color: var(--dark-blue-bg);
+  text-align: center;
+  color: var(--light-mode-light-text);
+  padding: 3px;
+  box-sizing: border-box;
+}

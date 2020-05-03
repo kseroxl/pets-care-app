@@ -1,0 +1,37 @@
+.logout {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 2%;
+  bottom: 5%;
+}
+.logout-svg {
+  width: 32px;
+  height: 32px;
+  margin: 10px;
+}
+.logout-svg path {
+  fill: var(--dark-blue-bg);
+}
+.logout-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--dark-blue-bg);
+}
+.logout-link p {
+  margin: 0;
+  animation: link-fly 0.3s ease-in;
+}
+
+@keyframes link-fly {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

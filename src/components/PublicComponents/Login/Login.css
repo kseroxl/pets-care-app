@@ -1,0 +1,17 @@
+.log-in-form {
+  width: 50%;
+  height: 50%;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1050px) {
+  .log-in-form {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .log-in-form {
+    width: 90%;
+  }
+}
