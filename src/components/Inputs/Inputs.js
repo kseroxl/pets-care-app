@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import "./Inputs.css";
 
 const Input = (props) => {
@@ -7,16 +7,40 @@ const Input = (props) => {
     backgroundPosition: "100% 50%",
   };
   return (
-    <div className={`input ${props.class}`}>
+    <div className={`input ${props.className}`}>
       {props.label && <label>{props.label}</label>}
-      <input
-        style={style}
-        onChange={props.onChange}
-        type={props.type ? props.type : "text"}
-        placeholder={props.placeholder}
-      />
+      <input {...props} style={style} />
     </div>
   );
 };
 
-export { Input };
+const Select = (props) => {
+  const style = {
+    background: `url(./icons/${props.icon}) no-repeat`,
+    backgroundPosition: "100% 50%",
+  };
+  const ref = createRef();
+
+  const handleChange = () => {
+    var selectedOption = ref.current.options[ref.current.selectedIndex].value;
+    props.onChange(selectedOption);
+  };
+
+  return (
+    <div className={`input ${props.class}`}>
+      {props.label && <label>{props.label}</label>}
+      <select
+        ref={ref}
+        className="pointer"
+        style={style}
+        onChange={handleChange}
+      >
+        {props.options.map((option) => {
+          return <option key={option}>{option}</option>;
+        })}
+      </select>
+    </div>
+  );
+};
+
+export { Input, Select };

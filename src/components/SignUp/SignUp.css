@@ -1,0 +1,17 @@
+.sign-up-form {
+  width: 80%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 5%;
+  row-gap: 5%;
+}
+.sign-up-button {
+  grid-column: 2;
+}
+
+@media only screen and (max-width: 650px) {
+  .sign-up-form {
+    display: block;
+  }
+}

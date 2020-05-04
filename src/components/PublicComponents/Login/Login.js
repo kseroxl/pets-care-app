@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 import { AuthConsumer } from "../../../authContext";
@@ -11,7 +12,7 @@ function Login(props) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (event, login, role) => {
+  const handleSubmit = (event, login) => {
     event.preventDefault();
     if (!email) {
       setError("Please enter your email");
@@ -54,12 +55,15 @@ function Login(props) {
                 icon="password.svg"
               />
               <Button
-                onClick={(event) =>
-                  handleSubmit(event, initiateLogin, "doctor")
-                }
+                onClick={(event) => handleSubmit(event, initiateLogin)}
                 text="Log in"
                 class="green-bg full-width"
               />
+              <Link to="signup" id="link-to-signup">
+                <p className="small text-centered">
+                  Don't have an account? Sign up
+                </p>
+              </Link>
             </form>
           </FormContainer>
         )}

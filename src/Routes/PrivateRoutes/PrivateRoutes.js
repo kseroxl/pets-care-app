@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import * as Routes from "../index";
 import rolesConfig from "../../config/pages.config";
 
@@ -19,6 +19,7 @@ const PrivateRoutes = (props) => {
               component={Routes[component]}
             />
           ))}
+          <Redirect from="signup" to="/" />
         </div>
       </section>
     </div>

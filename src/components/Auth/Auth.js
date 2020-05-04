@@ -6,12 +6,13 @@ class Auth extends Component {
   state = {
     authenticated: false,
     user: {
-      role: "visitor",
+      role: null,
     },
     accessToken: "",
   };
 
   initiateLogin = (email, password) => {
+    console.log(email);
     if (email !== "doctor" && email !== "patient") return;
     authenticationService.login(email);
     const user = this.state.user;

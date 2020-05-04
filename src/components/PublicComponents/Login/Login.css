@@ -3,7 +3,9 @@
   height: 50%;
   flex-direction: column;
 }
-
+#link-to-signup {
+  color: var(--dark-blue-bg);
+}
 @media only screen and (max-width: 1050px) {
   .log-in-form {
     width: 70%;

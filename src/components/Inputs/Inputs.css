@@ -1,4 +1,5 @@
-.input input {
+.input input,
+.input select {
   width: 100%;
   padding: 10px;
   margin-bottom: 3%;
@@ -9,6 +10,10 @@
 
   outline: none;
   box-sizing: border-box;
+}
+
+.input select {
+  -webkit-appearance: none;
 }
 
 .input input:focus {
@@ -39,7 +44,8 @@
 }
 
 @media only screen and (max-width: 650px) {
-  .input input {
+  .input input,
+  .input select {
     font-size: 0.8em;
   }
   .button {
