@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Login from "../../components/PublicComponents/Login/Login";
-import SignUp from "../../components/SignUp/SignUp";
+import SignUp from "../../components/PublicComponents/SignUp/SignUp";
 
 const PublicRoutes = (props) => {
   return (

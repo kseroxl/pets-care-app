@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
 
-import FormContainer from "../Containers/FormContainer/FormContainer";
-import { AuthConsumer } from "../../authContext";
-import { Input, Password, Select } from "../Inputs/Inputs";
-import { Button } from "../Inputs/Buttons";
-import { onDateChange, validateDateFormat } from "../Inputs/Inputs";
+import FormContainer from "../../Containers/FormContainer/FormContainer";
+import { AuthConsumer } from "../../../authContext";
+import { Input, Password, Select } from "../../Inputs/Inputs";
+import { Button } from "../../Inputs/Buttons";
+import { onDateChange, validateDateFormat } from "../../Inputs/Inputs";
 
 function SignUp(props) {
   const user = {
