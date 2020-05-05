@@ -33,6 +33,10 @@ body {
   background-color: var(--green-bg);
 }
 
+.grey-text {
+  color: var(--grey);
+}
+
 /* sizes */
 .full-screen {
   display: block;

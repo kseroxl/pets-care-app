@@ -15,7 +15,7 @@
 }
 .form-dog-img {
   position: absolute;
-  width: 20%;
+  width: 18%;
   bottom: -5%;
   left: -5%;
 }
@@ -33,19 +33,9 @@
 }
 
 @media only screen and (max-width: 650px) {
-  .form-dog-img {
-    width: 30%;
-    left: -10%;
-  }
-}
-
-@media only screen and (max-width: 650px) {
   .form-container.white-bg {
     width: 95vw;
   }
-}
-
-@media only screen and (max-width: 300px) {
   .form-dog-img {
     display: none;
   }

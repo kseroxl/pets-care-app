@@ -4,32 +4,35 @@ import "./Login.css";
 
 import { AuthConsumer } from "../../../authContext";
 import FormContainer from "../../Containers/FormContainer/FormContainer";
-import { Input } from "../../Inputs/Inputs";
+import { Input, Password } from "../../Inputs/Inputs";
 import { Button } from "../../Inputs/Buttons";
 
 function Login(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [userData, setData] = useState({ email: null, password: null });
   const [error, setError] = useState("");
 
   const handleSubmit = (event, login) => {
     event.preventDefault();
-    if (!email) {
-      setError("Please enter your email");
-    } else if (!password) {
-      setError("Please enter your password");
-    } else {
-      login(email, password);
+    if (validateData()) {
+      login(userData.email, "");
     }
   };
 
-  const handleChangeEmail = (e) => {
-    setEmail(e.target.value);
-    setError("");
+  const validateData = () => {
+    for (let key in userData) {
+      if (!userData[key]) {
+        setError("Please fill in all the fields");
+        return false;
+      }
+    }
+    return true;
   };
 
-  const handleChangePassword = (e) => {
-    setPassword(e.target.value);
+  const handleChange = (e) => {
+    setData({
+      ...userData,
+      [e.target.placeholder.toLowerCase()]: e.target.value,
+    });
     setError("");
   };
 
@@ -43,16 +46,14 @@ function Login(props) {
               <Input
                 type="email"
                 placeholder="Email"
-                class="full-width"
-                onChange={handleChangeEmail}
+                className="full-width"
+                onChange={handleChange}
                 icon="email.svg"
               />
-              <Input
-                type="password"
+              <Password
                 placeholder="Password"
-                class="full-width"
-                onChange={handleChangePassword}
-                icon="password.svg"
+                className="full-width"
+                onChange={handleChange}
               />
               <Button
                 onClick={(event) => handleSubmit(event, initiateLogin)}

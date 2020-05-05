@@ -13,5 +13,6 @@
 @media only screen and (max-width: 650px) {
   .sign-up-form {
     display: block;
+    height: 90%;
   }
 }

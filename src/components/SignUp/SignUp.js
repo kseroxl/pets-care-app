@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
 
-import { AuthConsumer } from "../../authContext";
 import FormContainer from "../Containers/FormContainer/FormContainer";
-import { Input, Select } from "../Inputs/Inputs";
+import { AuthConsumer } from "../../authContext";
+import { Input, Password, Select } from "../Inputs/Inputs";
 import { Button } from "../Inputs/Buttons";
+import { onDateChange, validateDateFormat } from "../Inputs/Inputs";
 
 function SignUp(props) {
   const user = {
-    pet: "Dog",
     name: null,
     surname: null,
     email: null,
     "phone number": null,
     address: null,
-    "pet's name": "",
+    password: null,
+    "confirm password": null,
   };
   const [error, setError] = useState("");
   const [userData, setData] = useState(user);
@@ -24,13 +25,21 @@ function SignUp(props) {
     event.preventDefault();
     if (validateData()) {
       login(userData.email, "");
-    } else setError("Please fill in all the fields");
+    }
   };
 
   const validateData = () => {
     for (let key in userData) {
-      if (!userData[key]) return false;
+      if (!userData[key]) {
+        setError("Please fill in all the fields");
+        return false;
+      }
     }
+    if (userData["password"] !== userData["confirm password"]) {
+      setError("Please confirm password correctly");
+      return false;
+    }
+
     return true;
   };
 
@@ -42,10 +51,12 @@ function SignUp(props) {
     setError("");
   };
 
-  const checkLettersInDate = (date) => {
-    console.log(date);
-    var reg = new RegExp("[A-Za-z]");
-    return reg.test(date);
+  const handleDateChange = (e) => {
+    if (e.target.value.length === 10)
+      setError(validateDateFormat(e.target.value));
+    else setError("");
+    const newDate = onDateChange(e);
+    setData({ ...userData, [e.target.id]: newDate });
   };
 
   const handleSelect = (option) => {
@@ -55,23 +66,8 @@ function SignUp(props) {
     });
   };
 
-  const handleDateChange = (e) => {
-    if (!checkLettersInDate(e.target.value)) setError("");
-    const valueIsNaN = Number.isNaN(
-      parseInt(e.target.value[e.target.value.length - 1])
-    );
-
-    if (!valueIsNaN) {
-      // TO DO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      //   if (e.target.value.length === 2 || e.target.value.length === 4) {
-      //     e.target.value += "/";
-      //   }
-    } else {
-      setError("Please enter date in numbers");
-    }
-  };
-
   const pets = ["Dog", "Cat", "Parrot"];
+  const MAX_LENGTH = 10;
 
   return (
     <>
@@ -93,13 +89,6 @@ function SignUp(props) {
                 onChange={handleChange}
               />
               <Input
-                type="email"
-                placeholder="Email"
-                className="full-width span-2"
-                onChange={handleChange}
-                icon="email.svg"
-              />
-              <Input
                 type="tel"
                 placeholder="Phone number"
                 className="full-width"
@@ -113,7 +102,7 @@ function SignUp(props) {
                 onChange={handleChange}
                 icon="home.svg"
               />
-              <Select
+              {/* <Select
                 onChange={handleSelect}
                 className="full-width"
                 icon="arrow-down.svg"
@@ -128,19 +117,40 @@ function SignUp(props) {
               />
               <Input
                 type="text"
-                placeholder="MM/DD/YYYY"
+                placeholder="DD/MM/YYYY"
                 className="full-width"
                 onChange={handleDateChange}
-                maxLength="10"
+                maxLength={MAX_LENGTH}
                 icon="date.svg"
+                id="birth-date"
+                label="Date of birth"
               />
               <Input
                 type="text"
-                placeholder="MM/DD/YYYY"
+                placeholder="DD/MM/YYYY"
                 className="full-width "
                 onChange={handleDateChange}
-                maxLength="10"
+                maxLength={MAX_LENGTH}
                 icon="date.svg"
+                id="death-date"
+                label="Date of death"
+              /> */}
+              <Input
+                type="email"
+                placeholder="Email"
+                className="full-width span-2"
+                onChange={handleChange}
+                icon="email.svg"
+              />
+              <Password
+                placeholder="Password"
+                className="full-width"
+                onChange={handleChange}
+              />
+              <Password
+                placeholder="Confirm password"
+                className="full-width"
+                onChange={handleChange}
               />
               <div className="sign-up-button">
                 <Button

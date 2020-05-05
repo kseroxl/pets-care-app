@@ -23,6 +23,30 @@
 ::-webkit-input-placeholder {
   color: var(--light-mode-dark-text);
 }
+.password {
+  position: relative;
+}
+.password-off {
+  background: url("/icons/eye-on.svg") no-repeat;
+  background-position: 100% 50%;
+}
+.password-on {
+  background: url("/icons/eye-off.svg") no-repeat;
+  background-position: 100% 50%;
+}
+.password span {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.password > span:active ~ .password > input {
+  background-color: aqua;
+}
 
 .button {
   border: none;
