@@ -66,7 +66,30 @@
 .button:active {
   transform: scale(0.99);
 }
+.home-link {
+  text-decoration: none;
+  position: absolute;
+  margin-top: 2%;
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
+}
+.home-link img {
+  margin-right: 10px;
+}
+.hovered {
+  animation: hovered 0.7s ease-in infinite;
+}
+@keyframes hovered {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
 
+  50% {
+    transform: translate(5px, 0);
+  }
+}
 @media only screen and (max-width: 650px) {
   .input input,
   .input select {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
+import { cities, pets } from "../../../config/lists.config";
 
 import FormContainer from "../../Containers/FormContainer/FormContainer";
 import { AuthConsumer } from "../../../authContext";
@@ -13,7 +14,7 @@ function SignUp(props) {
     name: null,
     surname: null,
     email: null,
-    "phone number": null,
+    phone: null,
     address: null,
     password: null,
     "confirm password": null,
@@ -21,14 +22,15 @@ function SignUp(props) {
   const [error, setError] = useState("");
   const [userData, setData] = useState(user);
 
-  const handleSubmit = (event, login) => {
+  const handleSubmit = (event, signupCallback) => {
     event.preventDefault();
     if (validateData()) {
-      login(userData.email, "");
+      signupCallback(userData);
     }
   };
 
   const validateData = () => {
+    console.log(userData);
     for (let key in userData) {
       if (!userData[key]) {
         setError("Please fill in all the fields");
@@ -59,20 +61,20 @@ function SignUp(props) {
     setData({ ...userData, [e.target.id]: newDate });
   };
 
-  const handleSelect = (option) => {
+  const handleSelect = (label, option) => {
+    setError("");
     setData({
       ...userData,
-      pet: option,
+      [label]: option,
     });
   };
 
-  const pets = ["Dog", "Cat", "Parrot"];
   const MAX_LENGTH = 10;
 
   return (
     <>
       <AuthConsumer>
-        {({ initiateLogin, user }) => (
+        {({ initiateSignUp, user }) => (
           <FormContainer header="Sign up">
             {error && <p className="error-message">{error}</p>}
             <form className="sign-up-form">
@@ -90,11 +92,18 @@ function SignUp(props) {
               />
               <Input
                 type="tel"
-                placeholder="Phone number"
+                placeholder="Phone"
                 className="full-width"
                 onChange={handleChange}
                 icon="phone.svg"
               />
+              {/* <Select
+                onChange={handleSelect}
+                className="full-width"
+                icon="arrow-down.svg"
+                options={cities}
+                id="city"
+              /> */}
               <Input
                 type="text"
                 placeholder="Address"
@@ -102,39 +111,6 @@ function SignUp(props) {
                 onChange={handleChange}
                 icon="home.svg"
               />
-              {/* <Select
-                onChange={handleSelect}
-                className="full-width"
-                icon="arrow-down.svg"
-                options={pets}
-              />
-              <Input
-                type="text"
-                placeholder="Pet's name"
-                className="full-width"
-                onChange={handleChange}
-                icon="pet.svg"
-              />
-              <Input
-                type="text"
-                placeholder="DD/MM/YYYY"
-                className="full-width"
-                onChange={handleDateChange}
-                maxLength={MAX_LENGTH}
-                icon="date.svg"
-                id="birth-date"
-                label="Date of birth"
-              />
-              <Input
-                type="text"
-                placeholder="DD/MM/YYYY"
-                className="full-width "
-                onChange={handleDateChange}
-                maxLength={MAX_LENGTH}
-                icon="date.svg"
-                id="death-date"
-                label="Date of death"
-              /> */}
               <Input
                 type="email"
                 placeholder="Email"
@@ -154,7 +130,7 @@ function SignUp(props) {
               />
               <div className="sign-up-button">
                 <Button
-                  onClick={(event) => handleSubmit(event, initiateLogin)}
+                  onClick={(event) => handleSubmit(event, initiateSignUp)}
                   text="Sign up"
                   class="green-bg full-width"
                 />

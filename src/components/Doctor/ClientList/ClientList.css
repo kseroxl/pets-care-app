@@ -1,0 +1,26 @@
+.list-of-clients {
+  table-layout: fixed;
+  margin: 0 auto;
+  width: 95%;
+  text-align: center;
+  box-sizing: border-box;
+}
+.list-of-clients tr:nth-child(even) {
+  background-color: var(--green-light);
+}
+.list-of-clients td {
+  padding: 15px;
+  border-bottom: 1px solid var(--grey-text);
+}
+.list-of-clients th {
+  background-color: var(--dark-blue-bg);
+  color: var(--light-mode-light-text);
+  font-weight: 600;
+  padding: 15px;
+}
+.search-bar {
+  border-width: 2px !important;
+  border-color: var(--dark-blue-bg) !important;
+  padding: 10px;
+  border-radius: 20px;
+}

@@ -4,10 +4,12 @@ export default {
       {
         url: "/",
         component: "HomeDoctor",
+        exact: true,
       },
       {
         url: "clients",
         component: "ClientList",
+        exact: false,
       },
     ],
   },
@@ -16,6 +18,12 @@ export default {
       {
         url: "/",
         component: "HomePatient",
+        exact: true,
+      },
+      {
+        url: "my_pets",
+        component: "MyPets",
+        exact: false,
       },
     ],
   },

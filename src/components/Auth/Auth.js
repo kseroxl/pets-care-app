@@ -23,6 +23,11 @@ class Auth extends Component {
     this.props.updateRole(email);
   };
 
+  initiateSignUp = (newUser) => {
+    console.log(newUser);
+    authenticationService.signUp(newUser);
+  };
+
   logout = () => {
     authenticationService.logout();
     const user = this.state.user;
@@ -54,6 +59,7 @@ class Auth extends Component {
     const authProviderValue = {
       ...this.state,
       initiateLogin: this.initiateLogin,
+      initiateSignUp: this.initiateSignUp,
       handleAuthentication: this.handleAuthentication,
       logout: this.logout,
     };

@@ -1,0 +1,9 @@
+.patient-sections {
+  width: 40vw;
+  position: absolute;
+  bottom: 20%;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  column-gap: 10%;
+  row-gap: 25%;
+}

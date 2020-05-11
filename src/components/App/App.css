@@ -4,6 +4,7 @@ body {
   --dark-blue-bg: #264653;
   --green-bg: #2a9d8f;
   --green-bg-hover: #1d6d64;
+  --green-light: rgba(42, 157, 143, 0.19);
   --light-mode-light-bg: #fff;
   --light-mode-light-text: #fff;
   --light-mode-dark-text: #000000;
@@ -37,6 +38,10 @@ body {
   color: var(--grey);
 }
 
+.green-text {
+  color: var(--green-bg);
+}
+
 /* sizes */
 .full-screen {
   display: block;
@@ -47,6 +52,7 @@ body {
 
 .full-width {
   width: 100%;
+  box-sizing: border-box;
 }
 
 .half-width {
@@ -101,6 +107,15 @@ body {
 
 .small {
   font-size: 0.9rem;
+}
+.lower {
+  margin-top: 7%;
+}
+.container {
+  width: 80vw;
+  height: 80vh;
+  margin: 2% auto;
+  position: relative;
 }
 
 @media only screen and (max-width: 650px) {

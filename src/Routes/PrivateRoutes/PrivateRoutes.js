@@ -4,7 +4,6 @@ import * as Routes from "../index";
 import rolesConfig from "../../config/pages.config";
 
 const PrivateRoutes = (props) => {
-  console.log(props);
   let allowedRoutes = rolesConfig[props.role]
     ? rolesConfig[props.role].routes
     : [];
@@ -12,14 +11,17 @@ const PrivateRoutes = (props) => {
     <div>
       <section>
         <div>
-          {allowedRoutes.map(({ url, component }) => (
+          {allowedRoutes.map(({ url, component, exact }) => (
             <Route
               key={component}
               path={`${props.match.path}${url}`}
               component={Routes[component]}
+              exact={exact}
             />
           ))}
-          <Redirect from="signup" to="/" />
+          <Route exact path="/">
+            <Redirect from="signup" to="/" />
+          </Route>
         </div>
       </section>
     </div>

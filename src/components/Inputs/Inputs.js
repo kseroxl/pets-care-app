@@ -60,7 +60,8 @@ export const validateDateFormat = (date) => {
 const Input = (props) => {
   const style = {
     background: `url(./icons/${props.icon}) no-repeat`,
-    backgroundPosition: "100% 50%",
+    backgroundPosition:
+      props.className.indexOf("search-bar") === -1 ? "100% 50%" : "98% 50%",
   };
   return (
     <div className={`input ${props.className}`}>
@@ -103,9 +104,9 @@ const Select = (props) => {
   };
   const ref = createRef();
 
-  const handleChange = () => {
+  const handleChange = (label) => {
     var selectedOption = ref.current.options[ref.current.selectedIndex].value;
-    props.onChange(selectedOption);
+    props.onChange(label, selectedOption);
   };
 
   return (
@@ -115,7 +116,7 @@ const Select = (props) => {
         ref={ref}
         className="pointer"
         style={style}
-        onChange={handleChange}
+        onChange={() => handleChange(props.id)}
       >
         {props.options.map((option) => {
           return <option key={option}>{option}</option>;

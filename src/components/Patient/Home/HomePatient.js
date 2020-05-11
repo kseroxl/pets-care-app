@@ -1,12 +1,12 @@
 import React from "react";
 import Logout from "../../Logout/Logout";
 import DashboardContainer from "../../Containers/DashboardContaine/DashboardContainer";
+import Sections from "./Sections/Sections";
 
 function HomePatient() {
   return (
     <DashboardContainer header="Home">
-      <h1 style={{ textAlign: "center" }}>Patient Home</h1>
-      <Logout />
+      <Sections />
     </DashboardContainer>
   );
 }

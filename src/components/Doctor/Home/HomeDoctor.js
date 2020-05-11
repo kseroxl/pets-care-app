@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logout from "../../Logout/Logout";
 import DashboardContainer from "../../Containers/DashboardContaine/DashboardContainer";
 
 function HomeDoctor() {
@@ -15,7 +14,6 @@ function HomeDoctor() {
           <Link to="/clients">See clients list</Link>
         </button>
       </div>
-      <Logout />
     </DashboardContainer>
   );
 }

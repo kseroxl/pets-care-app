@@ -1,0 +1,33 @@
+.section-bg-dark:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+.section-bg-dark {
+  width: 200px;
+  height: 120px;
+  position: relative;
+}
+.section-bg-white {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 15%;
+  left: 7%;
+  cursor: pointer;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.section-bg-white .flex-centered {
+  height: 80%;
+}
+.section-bg-white img {
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+}
+.section-bg-white .section-header {
+  height: 20%;
+  text-align: center;
+  color: var(--light-mode-light-text);
+  padding: 5px;
+}
