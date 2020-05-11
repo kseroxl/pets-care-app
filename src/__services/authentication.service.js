@@ -28,6 +28,7 @@ const currentUserSubject = new BehaviorSubject(
 const login = function (role) {
   console.log(role);
   localStorage.setItem("currentUser", JSON.stringify(role));
+  localStorage.setItem("currentUserId", JSON.stringify("2"));
   currentUserSubject.next(role);
 
   return role;

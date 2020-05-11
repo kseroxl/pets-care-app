@@ -7,6 +7,7 @@ class Auth extends Component {
     authenticated: false,
     user: {
       role: null,
+      id: null,
     },
     accessToken: "",
   };
@@ -17,6 +18,7 @@ class Auth extends Component {
     authenticationService.login(email);
     const user = this.state.user;
     user.role = email;
+    user.id = 1;
     this.setState({
       user: user,
     });

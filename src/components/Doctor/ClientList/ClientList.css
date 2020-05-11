@@ -1,19 +1,25 @@
 .list-of-clients {
   table-layout: fixed;
   margin: 0 auto;
-  width: 95%;
+  /* width: 95%; */
+  width: 1000px;
   text-align: center;
   box-sizing: border-box;
+  table-layout: fixed;
 }
-.list-of-clients tr:nth-child(even) {
-  background-color: var(--green-light);
+
+.list-of-clients th:nth-child(1) {
+  background-color: transparent;
+  width: 15%;
 }
 .list-of-clients td {
   padding: 15px;
-  border-bottom: 1px solid var(--grey-text);
+}
+.list-of-clients tr {
+  background-color: var(--grey);
 }
 .list-of-clients th {
-  background-color: var(--dark-blue-bg);
+  background-color: var(--green-bg);
   color: var(--light-mode-light-text);
   font-weight: 600;
   padding: 15px;
@@ -23,4 +29,9 @@
   border-color: var(--dark-blue-bg) !important;
   padding: 10px;
   border-radius: 20px;
+}
+.pet-icon {
+  width: 25%;
+  border-radius: 10px;
+  padding: 10px;
 }

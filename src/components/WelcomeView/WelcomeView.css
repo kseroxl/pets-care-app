@@ -1,0 +1,25 @@
+.welcome-view {
+  overflow: hidden;
+  width: 100%;
+  padding-top: 5%;
+  text-align: center;
+}
+.welcome-view h2 {
+  font-weight: 400;
+}
+.welcome-view img {
+  width: 20%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.welcome-view span {
+  display: block;
+  height: 1px;
+  background-color: var(--dark-blue-bg);
+  width: 60%;
+  margin: 60px auto;
+}
+
+.welcome-view p {
+  margin: 0;
+}

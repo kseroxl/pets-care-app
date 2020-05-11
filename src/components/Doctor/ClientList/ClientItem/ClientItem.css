@@ -1,0 +1,17 @@
+.client-item {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+.client-info {
+  margin-left: 2%;
+  border-left: 2px solid var(--green-bg);
+  padding-left: 10px;
+}
+.client-info p {
+  margin: 5px;
+}
+.client-item h4 {
+  margin: 5px;
+}

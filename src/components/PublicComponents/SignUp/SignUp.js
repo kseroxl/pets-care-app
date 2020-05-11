@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
-import { cities, pets } from "../../../config/lists.config";
 
 import FormContainer from "../../Containers/FormContainer/FormContainer";
 import { AuthConsumer } from "../../../authContext";
-import { Input, Password, Select } from "../../Inputs/Inputs";
+import { Input, Password } from "../../Inputs/Inputs";
 import { Button } from "../../Inputs/Buttons";
-import { onDateChange, validateDateFormat } from "../../Inputs/Inputs";
 
 function SignUp(props) {
   const user = {
@@ -53,24 +51,6 @@ function SignUp(props) {
     setError("");
   };
 
-  const handleDateChange = (e) => {
-    if (e.target.value.length === 10)
-      setError(validateDateFormat(e.target.value));
-    else setError("");
-    const newDate = onDateChange(e);
-    setData({ ...userData, [e.target.id]: newDate });
-  };
-
-  const handleSelect = (label, option) => {
-    setError("");
-    setData({
-      ...userData,
-      [label]: option,
-    });
-  };
-
-  const MAX_LENGTH = 10;
-
   return (
     <>
       <AuthConsumer>
@@ -97,13 +77,6 @@ function SignUp(props) {
                 onChange={handleChange}
                 icon="phone.svg"
               />
-              {/* <Select
-                onChange={handleSelect}
-                className="full-width"
-                icon="arrow-down.svg"
-                options={cities}
-                id="city"
-              /> */}
               <Input
                 type="text"
                 placeholder="Address"
@@ -134,7 +107,7 @@ function SignUp(props) {
                   text="Sign up"
                   class="green-bg full-width"
                 />
-                <Link to="/" id="link-to-signup">
+                <Link to="/login" id="link-to-signup">
                   <p className="small text-centered">
                     Already heva an account? Log in
                   </p>

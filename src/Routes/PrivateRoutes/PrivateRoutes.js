@@ -19,6 +19,9 @@ const PrivateRoutes = (props) => {
               exact={exact}
             />
           ))}
+          <Route path="/">
+            <Redirect from="login" to="/" />
+          </Route>
           <Route exact path="/">
             <Redirect from="signup" to="/" />
           </Route>

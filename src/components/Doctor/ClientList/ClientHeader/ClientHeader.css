@@ -1,0 +1,26 @@
+.client-header {
+  flex-direction: column;
+  max-width: 10%;
+}
+.client-header #client-header-round {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+  background-color: var(--green-bg);
+}
+.client-header #client-header-line {
+  display: block;
+  width: 1.5px;
+  height: 15px;
+  background-color: var(--dark-blue-bg);
+  margin-bottom: 3px;
+}
+.client-header img {
+  width: 18px;
+  background-color: var(--green-bg);
+  border-radius: 50%;
+  padding: 8px;
+  margin-top: 5px;
+}

@@ -1,4 +1,4 @@
-import { signUpAPI } from "../config/api";
+import { signUpAPI, addPetAPI } from "../config/api";
 
 const getClients = () => {
   const headers = {
@@ -10,6 +10,19 @@ const getClients = () => {
   return fetch(signUpAPI, headers);
 };
 
+const addPet = (newPet) => {
+  const headers = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newPet),
+  };
+  return fetch(addPetAPI, headers);
+};
+
 export const clientService = {
   getClients,
+  addPet,
 };

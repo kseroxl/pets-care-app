@@ -1,5 +1,5 @@
 const pets = [
-  "Pet",
+  "Species",
   "Rabbit",
   "Cat",
   "Dog",

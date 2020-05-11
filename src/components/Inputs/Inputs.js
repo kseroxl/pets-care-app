@@ -106,7 +106,7 @@ const Select = (props) => {
 
   const handleChange = (label) => {
     var selectedOption = ref.current.options[ref.current.selectedIndex].value;
-    props.onChange(label, selectedOption);
+    props.onChange(label, selectedOption.toUpperCase());
   };
 
   return (
