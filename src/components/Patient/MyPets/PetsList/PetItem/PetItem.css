@@ -1,0 +1,11 @@
+.pet-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  position: relative;
+  border-top: 3px solid var(--dark-blue-bg);
+  display: flex;
+}
+.pet-item img {
+  width: 100px;
+  margin-right: 15px;
+}

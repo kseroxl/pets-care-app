@@ -9,3 +9,10 @@
   font-size: 1.2rem;
   margin-bottom: 8px;
 }
+@media only screen and (max-width: 650px) {
+  .client-icon {
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+  }
+}

@@ -19,10 +19,10 @@ const PrivateRoutes = (props) => {
               exact={exact}
             />
           ))}
-          <Route path="/">
+          <Route exact path="/login">
             <Redirect from="login" to="/" />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/signup">
             <Redirect from="signup" to="/" />
           </Route>
         </div>

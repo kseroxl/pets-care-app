@@ -1,14 +1,4 @@
-const pets = [
-  "Species",
-  "Rabbit",
-  "Cat",
-  "Dog",
-  "Rat",
-  "Hamster",
-  "Parrot",
-  "Fish",
-  "Turtle",
-];
+const pets = ["Species", "Rabbit", "Cat", "Dog", "Turtle", "Horse"];
 
 const cities = [
   "City",

@@ -8,7 +8,7 @@ const ClientItem = (props) => {
       <ClientHeader
         name={props.client.name}
         surname={props.client.surname}
-        pet="dog"
+        pet={props.client.pet}
       />
       <div className="client-info">
         <h4>
@@ -26,10 +26,12 @@ const ClientItem = (props) => {
         </p>
         <hr />
         <p className="small">
-          <b>Species: </b>Dog
+          <b>Species: </b>
+          {props.client.pet.species}
         </p>
         <p className="small">
-          <b>Pet's name: </b>Voice
+          <b>Pet's name: </b>
+          {props.client.pet.name}
         </p>
       </div>
     </div>

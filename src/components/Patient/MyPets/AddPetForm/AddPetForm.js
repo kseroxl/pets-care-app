@@ -5,7 +5,7 @@ import { pets } from "../../../../config/lists.config";
 import { AuthConsumer } from "../../../../authContext";
 import { clientService } from "../../../../__services/client.service";
 
-const AddPetForm = () => {
+const AddPetForm = (props) => {
   const [newPet, setNewPet] = useState({});
   const [error, setError] = useState("");
 
@@ -23,7 +23,9 @@ const AddPetForm = () => {
   const onAddPet = (e, ownerId) => {
     e.preventDefault();
     if (validateData()) {
-      clientService.addPet({ ...newPet, ownerId: ownerId });
+      //clientService.addPet({ ...newPet, ownerId: ownerId }).then((response) => {
+      props.onPetAdd(newPet);
+      //});
     }
   };
   return (

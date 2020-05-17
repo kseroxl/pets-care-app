@@ -35,3 +35,16 @@
     opacity: 1;
   }
 }
+@media only screen and (max-width: 650px) {
+  .logout {
+    right: 1%;
+    bottom: 2%;
+  }
+  .logout-svg {
+    width: 26px;
+    height: 26px;
+  }
+  .logout-link {
+    font-size: 0.9rem;
+  }
+}
